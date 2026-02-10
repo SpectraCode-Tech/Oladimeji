@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import ProjectCard from './ProjectCard';
-import Bitswap from'./assets/Bitswap.png'
-import Brandnest from'./assets/Brandnest.png'
-import Ecosculpt from'./assets/Ecosculpt.png'
-import Fnx from'./assets/Fnx.png'
-import Ntff from'./assets/ntffmk.png'
-import Paga from'./assets/Paga.png'
-import royalfix from'./assets/royalfit.png'
-import Xchange from'./assets/Xchange.png'
+import Bitswap from'../assets/Bitswap.png'
+import Brandnest from'../assets/Brandnest.png'
+import Ecosculpt from'../assets/Ecosculpt.png'
+import Fnx from'../assets/Fnx.png'
+import Ntff from'../assets/ntffmk.png'
+import Paga from'../assets/Paga.png'
+import royalfix from'../assets/royalfit.png'
+import Xchange from'../assets/Xchange.png'
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
