@@ -1,17 +1,61 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    // Loading State Toast
+    const loadingToast = toast.loading('Sending message...', {
+      style: {
+        background: '#0F172A',
+        color: '#fff',
+        border: '1px solid rgba(255,255,255,0.1)',
+        fontSize: '14px',
+        fontWeight: 'bold',
+      },
+    });
+
+    emailjs.sendForm('service_s37epmw', 'template_63kh4gi', form.current, {
+        publicKey: 'UD0t6YHM8tNkV2OKP',
+      })
+      .then(
+        () => {
+          toast.success('Message sent successfully!', {
+            id: loadingToast,
+            duration: 5000,
+            iconTheme: { primary: '#6366f1', secondary: '#fff' }, // Matches primary-glow
+            style: {
+              background: 'rgba(15, 23, 42, 0.9)',
+              backdropFilter: 'blur(10px)',
+              color: '#fff',
+              border: '1px solid rgba(99, 102, 241, 0.4)',
+              borderRadius: '16px',
+              padding: '16px',
+            },
+          });
+          e.target.reset();
+        },
+        (error) => {
+          toast.error('Failed to send. Please try again.', {
+            id: loadingToast,
+            style: {
+              background: '#7f1d1d',
+              color: '#fff',
+              borderRadius: '16px',
+            },
+          });
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+
   const contactInfo = [
-    { 
-      label: 'Email', 
-      value: 'dimejirsq@yahoo.com', 
-      icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' 
-    },
-    { 
-      label: 'Phone', 
-      value: '+2349077656721', 
-      icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' 
-    },
+    { label: 'Email', value: 'dimejirsq@yahoo.com', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
+    { label: 'Phone', value: '+2349077656721', icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
   ];
 
   const socials = [
@@ -24,11 +68,13 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 relative">
+    <section id="contact" className="py-24 px-6 relative overflow-hidden">
+      {/* Toast Container */}
+      <Toaster position="bottom-right" reverseOrder={false} />
+      
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16">
           
-          {/* LEFT: The Form */}
           <div className="w-full lg:w-3/5">
             <h2 className="text-5xl font-black text-white mb-6 tracking-tight italic">
               Get in <span className="text-slate-500 not-italic">touch</span>
@@ -37,35 +83,37 @@ const Contact = () => {
               Have a question or want to work together? Leave a message and I'll get back to you soon.
             </p>
 
-            <form className="grid grid-cols-1 gap-4">
+            <form ref={form} onSubmit={sendEmail} className="grid grid-cols-1 gap-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input 
                   type="text" 
+                  name="user_name"
+                  required
                   placeholder="Name" 
                   className="w-full bg-card-bg/20 border border-white/5 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary-glow/50 transition-all placeholder:text-slate-600"
                 />
                 <input 
                   type="email" 
+                  name="user_email"
+                  required
                   placeholder="Email" 
                   className="w-full bg-card-bg/20 border border-white/5 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary-glow/50 transition-all placeholder:text-slate-600"
                 />
               </div>
               <textarea 
+                name="message"
+                required
                 rows="6" 
                 placeholder="Your Message" 
                 className="w-full bg-card-bg/20 border border-white/5 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-primary-glow/50 transition-all resize-none placeholder:text-slate-600"
               />
-              <button className="w-full md:w-max px-14 py-4 bg-white text-black font-black rounded-2xl hover:bg-primary-glow hover:text-white transition-all duration-500 uppercase text-[10px] tracking-[0.3em]">
+              <button type="submit" className="w-full cursor-pointer md:w-max px-14 py-4 bg-white text-black font-black rounded-2xl hover:bg-primary-glow hover:text-white transition-all duration-500 uppercase text-[10px] tracking-[0.3em] active:scale-95">
                 Send Message
               </button>
             </form>
           </div>
 
-          {/* RIGHT: Info & Socials */}
-          {/* lg:mt-12 moves this section down on desktop to align with form inputs */}
           <div className="w-full lg:w-2/5 flex flex-col space-y-16 pt-2 lg:mt-12">
-            
-            {/* Contact Details */}
             <div className="space-y-10">
               {contactInfo.map((info) => (
                 <div key={info.label} className="group cursor-pointer">
@@ -82,7 +130,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Social Icons (Grid layout for more icons) */}
             <div className="">
               <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 mb-6">Social Presence</h4>
               <div className="flex flex-wrap gap-4">
@@ -91,6 +138,8 @@ const Contact = () => {
                     key={social.name} 
                     href={social.href} 
                     aria-label={social.name}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-14 h-14 shrink-0 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-slate-400 hover:text-white hover:border-primary-glow/50 hover:bg-primary-glow/5 transition-all duration-500 group"
                   >
                     <svg className="w-6 h-6 fill-current transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24">
