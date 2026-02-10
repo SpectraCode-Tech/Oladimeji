@@ -8,12 +8,13 @@ import Ntff from'../assets/ntffmk.png'
 import Paga from'../assets/Paga.png'
 import royalfix from'../assets/royalfit.png'
 import Xchange from'../assets/Xchange.png'
+import Pythagoras from'../assets/pyth.png'
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
 
   const data = [
-    { title: "Pythagoras' Theorem Calculator", tags: ["React", "Node Js"], description: "It is a dedicated online tool specifically designed to solve problems related to the Pythagorean Theorem.", image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800", liveLink: "https://pythagoras-calculator-gamma.vercel.app/", codeLink: "https://github.com/SpectraCode-Tech/Pythagoras-Calculator" },
+    { title: "Pythagoras' Theorem Calculator", tags: ["React", "Node Js"], description: "It is a dedicated online tool specifically designed to solve problems related to the Pythagorean Theorem.", image: Pythagoras, liveLink: "https://pythagoras-calculator-gamma.vercel.app/", codeLink: "https://github.com/SpectraCode-Tech/Pythagoras-Calculator" },
     { title: "Paga Landing Page", tags: ["Html", "Css"], description: "A premium landing page prototype designed for the fintech sector. This project focuses on high-end visual hierarchy and modern CSS techniques to establish trust and drive user sign-ups.", image: Paga, liveLink: "https://paga-one.vercel.app/", codeLink: "https://github.com/SpectraCode-Tech/Paga" },
     { title: "Dimeji Xchange", tags: ["Html", "Css"], description: "Frictionless Digital Asset Exchange UI. A conceptual storefront for digital currency trading.", image: Xchange, liveLink: "https://dimeji-xchange.vercel.app/", codeLink: "https://github.com/SpectraCode-Tech/Dimeji-Xchange" },
     { title: "FNX Investment", tags: ["Html", "Tailwind Css"], description: "Luxury Asset Management Landing Experience. A boutique investment brand concept that prioritizes a 'premium-tier' user experience.", image: Fnx, liveLink: "https://fnx-investment.vercel.app/", codeLink: "https://github.com/SpectraCode-Tech/FNX-Investment" },
