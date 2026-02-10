@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+html{
+  scroll-behavior: smooth;
+}
+
+@theme {
+  /* Core Colors */
+  --color-main-bg: #030617;
+  --color-card-bg: rgba(15, 23, 42, 0.4);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-primary-glow: #6366f1;
+  --color-secondary-glow: #06b6d4;
+  
+  /* Glow Shadows */
+  --shadow-glow-purple: 0 0 40px -10px rgba(99, 102, 241, 0.5);
+  --shadow-glow-blue: 0 0 20px 5px rgba(6, 182, 212, 0.3);
+}
+
+/* This is the part that usually breaks it if missing */
+@utility bg-mesh {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-main-bg);
+    color: #cbd5e1; /* slate-300 */
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+  }
+}
