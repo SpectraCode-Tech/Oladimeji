@@ -58,7 +58,7 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#" className="relative z-120">
           <span className="text-xl font-black text-white tracking-tighter uppercase">
-            Dev<span className="text-primary-glow">.</span>Portfolio
+            Faisal<span className="text-primary-glow">.</span>Rasaq
           </span>
         </a>
 
@@ -81,7 +81,7 @@ const Navbar = () => {
           <a 
             href="/resume.pdf" 
             download 
-            className="ml-4 px-6 py-2.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-primary-glow hover:text-white transition-all duration-300 shadow-lg shadow-white/5"
+            className="ml-4 px-6 py-2.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-primary-glow hover:text-white transition-all duration-300 ease-in-out shadow-lg shadow-white/5"
           >
             Resume
           </a>
