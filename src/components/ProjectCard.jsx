@@ -31,7 +31,7 @@ const ProjectCard = ({ title, tags = [], description, image, liveLink = "#", cod
         {tags.map(tag => (
           <span 
             key={tag} 
-            className="text-[10px] sm:text-xs font-semibold py-1 px-2.5 bg-white/5 border border-white/10 rounded-md text-slate-300 uppercase tracking-wide"
+            className="text-[10px] sm:text-xs font-semibold py-1 px-2.5 bg-white/5 border border-white/10 rounded-full text-slate-300 uppercase tracking-wide"
           >
             {tag}
           </span>
