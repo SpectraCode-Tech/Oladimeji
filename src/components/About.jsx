@@ -3,9 +3,9 @@ import React from 'react';
 const About = () => {
   const stats = [
     { label: 'Experience', value: '5 Years' },
-    { label: 'Projects', value: '50+' },
-    { label: 'Clients', value: '20+' },
-    { label: 'Availability', value: 'Freelance / Remote' }, // Updated
+    { label: 'Projects', value: '20+' },
+    // { label: 'Clients', value: '20+' },
+    { label: 'Availability', value: 'Freelance / Remote' },
   ];
 
   return (

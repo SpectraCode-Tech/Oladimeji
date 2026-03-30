@@ -9,6 +9,7 @@ import Paga from'../assets/Paga.png'
 import royalfix from'../assets/royalfit.png'
 import Xchange from'../assets/Xchange.png'
 import Pythagoras from'../assets/pyth.png'
+import Sentinel from '../assets/ChatGPT Image Mar 25, 2026, 12_23_39 PM.png'
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -23,7 +24,7 @@ const Projects = () => {
     { title: "BitSwap Crypto", tags: ["Html", "Css", "Javascript", "Django"], description: "BitSwap is a cryptocurrency exchange and digital asset management platform.", image: Bitswap , liveLink: "https://bitswap.onrender.com", codeLink: "https://github.com/SpectraCode-Tech/Bitswap" },
     { title: "Nollywood Travel Festival Website", tags: ["React", "Bootstrap"], description: "A dynamic event-driven platform built to manage the global footprint of the Nollywood Travel Festival.", image: Ntff, liveLink: "https://spectracode-tech.github.io/Nollywood-Travel-Festival/", codeLink: "https://github.com/SpectraCode-Tech/Nollywood-Travel-Festival" },
     { title: "Brandnest Onboarding Site", tags: ["Html", "Tailwind Css", "Javascript"], description: "A modern website for a brand management group", image: Brandnest, liveLink: "https://spectracode-tech.github.io/BrandNest/", codeLink: "https://github.com/SpectraCode-Tech/BrandNest" },
-    // { title: "Brandnest Onboarding Site", tags: ["Html", "Tailwind Css", "Javascript"], description: "A modern website for a brand management group", image: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?q=80&w=800", liveLink: "https://spectracode-tech.github.io/BrandNest/", codeLink: "https://github.com/SpectraCode-Tech/SmartBuy" },
+    { title: "The Sentinel News Delivery Website", tags: ["React", "Tailwind Css", "Django", "PostgreSQL", "Django Channels"], description: "A modern news platform with a real-time comment system and clean design structure with staff, admin and user platforms", image: Sentinel, liveLink: "https://thesentinel.oladimeji.com.ng/", codeLink: "https://github.com/SpectraCode-Tech/Sentinel" },
   ];
 
   const visibleProjects = showAll ? data : data.slice(0, 6);
