@@ -11,6 +11,7 @@ html{
   --color-border-subtle: rgba(255, 255, 255, 0.08);
   --color-primary-glow: #6366f1;
   --color-secondary-glow: #06b6d4;
+  --font-primary: 'Poppins', sans-serif;
   
   /* Glow Shadows */
   --shadow-glow-purple: 0 0 40px -10px rgba(99, 102, 241, 0.5);
