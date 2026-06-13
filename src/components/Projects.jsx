@@ -9,7 +9,8 @@ import Paga from'../assets/Paga.png'
 import royalfix from'../assets/royalfit.png'
 import Xchange from'../assets/Xchange.png'
 import Pythagoras from'../assets/pyth.png'
-import Sentinel from '../assets/ChatGPT Image Mar 25, 2026, 12_23_39 PM.png'
+import Sentinel from '../assets/Sentinel.png'
+import capanum from '../assets/Capanum.jpg'
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -25,6 +26,7 @@ const Projects = () => {
     { title: "Nollywood Travel Festival Website", tags: ["React", "Bootstrap"], description: "A dynamic event-driven platform built to manage the global footprint of the Nollywood Travel Festival.", image: Ntff, liveLink: "https://spectracode-tech.github.io/Nollywood-Travel-Festival/", codeLink: "https://github.com/SpectraCode-Tech/Nollywood-Travel-Festival" },
     { title: "Brandnest Onboarding Site", tags: ["Html", "Tailwind Css", "Javascript"], description: "A modern website for a brand management group", image: Brandnest, liveLink: "https://spectracode-tech.github.io/BrandNest/", codeLink: "https://github.com/SpectraCode-Tech/BrandNest" },
     { title: "The Sentinel News Delivery Website", tags: ["React", "Tailwind Css", "Django", "PostgreSQL", "Django Channels"], description: "A modern news platform with a real-time comment system and clean design structure with staff, admin and user platforms", image: Sentinel, liveLink: "https://thesentinel.oladimeji.com.ng/", codeLink: "https://github.com/SpectraCode-Tech/Sentinel" },
+    { title: "Capanum Associates Website", tags: ["React", "Tailwind Css"], description: "A cleanly designed, fully responsive website for a travel agency in Nigeria called Capanum Strategic Solution Associates Limited", image: capanum, liveLink: "https://capanumassociates.com/" },
   ];
 
   const visibleProjects = showAll ? data : data.slice(0, 6);

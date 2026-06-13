@@ -79,7 +79,7 @@ const Navbar = () => {
             </a>
           ))}
           <a 
-            href="/resume.pdf" 
+            href="../assets/FAISAL OLADIMEJI RASAQ-RESUME.pdf" 
             download 
             className="ml-4 px-6 py-2.5 bg-white text-black text-[10px] font-black uppercase tracking-widest rounded-full hover:bg-primary-glow hover:text-white transition-all duration-300 ease-in-out shadow-lg shadow-white/5"
           >
@@ -116,7 +116,7 @@ const Navbar = () => {
           <div className="w-8 h-px bg-white/10 my-4" />
           
           <a 
-            href="/resume.pdf"
+            href="../assets/FAISAL OLADIMEJI RASAQ-RESUME.pdf"
             download
             className="text-[10px] font-black text-white uppercase tracking-[0.3em] px-8 py-4 border border-white/20 rounded-full active:scale-95 transition-all"
           >
